@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <title>Youtube</title>
+</head>
+
+<body>
+    <div class="main_body">
+
+        <!-- side-bar Start -->
+        <div>
+            <div class="side-menu">
+                <div class="icon">
+                    <img src="Icon/Options.svg" alt="Icon" style="width: 25px; height: 25px;margin-bottom: .5rem;">
+                </div>
+                <div class="icon">
+                    <img src="Icon/Home.svg" alt="Icon" style="width: 24px; height: 24px;">
+                    <span>Home</span>
+                </div>
+                <div class="icon">
+                    <img src="Icon/Shorts_light.svg" alt="Icon" style="width: 24px; height: 24px;">
+                    <span>Shorts</span>
+                </div>
+                <div class="icon">
+                    <img src="Icon/Subscription_light.svg" alt="Icon" style="width: 24px; height: 24px;">
+                    <span>Subscriptions</span>
+                </div>
+                <div class="icon">
+                    <img src="Icon/You_light.svg" alt="Icon" style="width: 24px; height: 24px;">
+                    <span>You</span>
+                </div>
+            </div>
+        </div>
+        <!-- side-bar End -->
+
+        <div>
+            <!-- Header Start -->
+            <header class="header">
+                <div class="side-bar">
+                    <a href="#"> <img src="Images/Youtube.svg" alt="YouTube Logo" class="youtube-logo"></a>
+                </div>
+                <form class="search-bar">
+                    <input type="search" class="search-input" placeholder="Search" aria-label="Search" />
+                    <button class="search-btn btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 0 24 24"
+                            width="24" focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path clip-rule="evenodd"
+                                d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z"
+                                fill-rule="evenodd">
+                            </path>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn mic-btn">
+                        <img src="mic_black_24dp.svg" alt="mic">
+                    </button>
+                </form>
+                <div class="menu-icons">
+                    <a href="#">
+                        <img src="video_call_black_24dp.svg" />
+                    </a>
+                    <a href="#">
+                        <img src="notifications_black_24dp.svg" />
+                    </a>
+                    <a href="#">
+                        <img class="Menu-channel-icon" src="unnamed.jpg" alt="Your Channel">
+                    </a>
+                </div>
+            </header>
+            <!-- Header End -->
+
+            <!-- Categories Start -->
+            <div class="categories-wrapper">
+                <div class="categories">
+                    <section class="category-section">
+                        <!-- <button class="scroll-btn left-scroll">&lt;</button>  -->
+                        <button class="category_active" onclick="toggleCategoryClass(this)">All</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Mixes</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Gaming</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Sports</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Music</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Coding</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Computer Science</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Psychology</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Graphics Design</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">UX Writing</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Web Development</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">Graphics Design</button>
+                        <button class="category" onclick="toggleCategoryClass(this)">UX Writing</button>
+                        <!-- <button class="scroll-btn right-scroll">&gt;</button>  -->
+                    </section>
+                </div>
+            </div>
+            <!-- Categories End -->
+
+            <div class="videos">
+
+
+                <section class="video-section">
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Images/Video_Thumbnail/Eminem_Video_song.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="Images/Channel_Photo/Enimen.jpg" class="channel-icon">
+                            </a>
+                            <div class="video-details-1">
+                                <div class="video-details">
+                                    <a href="#" class="video-title"> Bump Heads</a>
+                                    <a href="#" class="video-channel-name"> EminemMusic</a>
+                                    <div class="video-metadata">
+                                        <span>94M views</span>
+                                        •
+                                        <span>6 years ago</span>
+                                    </div>
+                                </div>
+                                <!-- <button class="options-icon">
+                                <i class="fas fa-ellipsis-v"></i> Options
+                            </button> -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="4:13">
+                            <img class="thumbnail-image" src="Images/Video_Thumbnail/Die_with_a_Smile.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="Images/Channel_Photo/Lady_Gaga.jpg" class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Lady Gaga, Bruno Mars - Die With a Smile (Official
+                                    Music
+                                    Video)</a>
+                                <a href="#" class="video-channel-name"> Lady Gaga</a>
+                                <div class="video-metadata">
+                                    <span>434M views</span>
+                                    •
+                                    <span>4 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="Images/Enimen.jpg" class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+
+                <section class="video-section">
+                    <h2 class="video-section-title">
+                        Recommendations
+                        <button class="video-section-title-close">&times;</button>
+                    </h2>
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Images/Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="video-container">
+                        <a href="#" class="thumbnail" data-duration="12:15">
+                            <img class="thumbnail-image" src="Savera Ho Raha.jpg" />
+                        </a>
+                        <div class="video-bottom">
+                            <a href="#">
+                                <img src="https://yt3.ggpht.com/bo7jT1LvWF_QKP0FFr2u4CBsV59Sc1h330UfO7fFOyF_iD6xR0N02buRvZYZFud0ScxNbL0IUA=s88-c-k-c0x00ffffff-no-rj"
+                                    class="channel-icon">
+                            </a>
+                            <div class="video-details">
+                                <a href="#" class="video-title"> Savera Ho Raha</a>
+                                <a href="#" class="video-channel-name"> MTV India</a>
+                                <div class="video-metadata">
+                                    <span>530k views</span>
+                                    •
+                                    <span>7 months ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <script src="script.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
