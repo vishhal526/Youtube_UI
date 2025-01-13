@@ -18,7 +18,7 @@
  .side-menu {
    display: flex;
    position: sticky;
-   top: 0;
+   top: 5.5rem;
    flex-direction: column;
    margin-inline: .3rem;
    gap: 2rem 0rem;
@@ -182,6 +182,7 @@
    flex-direction: row;
    position: sticky;
    top: 0;
+   z-index: 10;
    background-color: #FFFFFF;
    justify-content: space-between;
    align-items: center;
@@ -269,6 +270,14 @@
    font-weight: 600;
    background-color: #111;
    color: white;
+ }
+
+ .categories {
+   position: sticky;
+   top: 5.3rem;
+   padding: 1rem;
+   background-color: #FFFFFF;
+   z-index: 9;
  }
 
  .category {
