@@ -17,6 +17,8 @@
 
  .side-menu {
    display: flex;
+   position: sticky;
+   top: 0;
    flex-direction: column;
    margin-inline: .3rem;
    gap: 2rem 0rem;
@@ -178,6 +180,9 @@
  .header {
    display: flex;
    flex-direction: row;
+   position: sticky;
+   top: 0;
+   background-color: #FFFFFF;
    justify-content: space-between;
    align-items: center;
    padding: 1.4rem 1px;
