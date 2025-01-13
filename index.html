@@ -11,14 +11,44 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="icon" style="display: flex; flex-direction: row; gap: 1rem;">
+            <img src="Icon/Options.svg" alt="Icon" class="icon-img" onclick="toggleSidebar()">
+            <a href="#"> <img src="Images/Youtube.svg" alt="YouTube Logo" class="youtube-logo"></a>
+        </div>
+        <form class="search-bar">
+            <input type="search" class="search-input" placeholder="Search" aria-label="Search" />
+            <button class="search-btn btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 0 24 24" width="24"
+                    focusable="false" aria-hidden="true"
+                    style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                    <path clip-rule="evenodd"
+                        d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z"
+                        fill-rule="evenodd">
+                    </path>
+                </svg>
+            </button>
+            <button type="button" class="btn mic-btn">
+                <img src="mic_black_24dp.svg" alt="mic">
+            </button>
+        </form>
+        <div class="menu-icons">
+            <a href="#">
+                <img src="video_call_black_24dp.svg" />
+            </a>
+            <a href="#">
+                <img src="notifications_black_24dp.svg" />
+            </a>
+            <a href="#">
+                <img class="Menu-channel-icon" src="unnamed.jpg" alt="Your Channel">
+            </a>
+        </div>
+    </header>
     <div class="main_body">
 
         <!-- side-bar Start -->
         <div>
             <div class="side-menu">
-                <div class="icon">
-                    <img src="Icon/Options.svg" alt="Icon" style="width: 25px; height: 25px;margin-bottom: .5rem;">
-                </div>
                 <div class="icon">
                     <img src="Icon/Home.svg" alt="Icon" style="width: 24px; height: 24px;">
                     <span>Home</span>
@@ -40,68 +70,31 @@
         <!-- side-bar End -->
 
         <div>
-            <!-- Header Start -->
-            <header class="header">
-                <div class="side-bar">
-                    <a href="#"> <img src="Images/Youtube.svg" alt="YouTube Logo" class="youtube-logo"></a>
-                </div>
-                <form class="search-bar">
-                    <input type="search" class="search-input" placeholder="Search" aria-label="Search" />
-                    <button class="search-btn btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24" viewBox="0 0 24 24"
-                            width="24" focusable="false" aria-hidden="true"
-                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
-                            <path clip-rule="evenodd"
-                                d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z"
-                                fill-rule="evenodd">
-                            </path>
-                        </svg>
-                    </button>
-                    <button type="button" class="btn mic-btn">
-                        <img src="mic_black_24dp.svg" alt="mic">
-                    </button>
-                </form>
-                <div class="menu-icons">
-                    <a href="#">
-                        <img src="video_call_black_24dp.svg" />
-                    </a>
-                    <a href="#">
-                        <img src="notifications_black_24dp.svg" />
-                    </a>
-                    <a href="#">
-                        <img class="Menu-channel-icon" src="unnamed.jpg" alt="Your Channel">
-                    </a>
-                </div>
-            </header>
-            <!-- Header End -->
-
             <!-- Categories Start -->
             <div class="categories-wrapper">
                 <div class="categories">
-                    <section class="category-section">
-                        <!-- <button class="scroll-btn left-scroll">&lt;</button>  -->
-                        <button class="category_active" onclick="toggleCategoryClass(this)">All</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Mixes</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Gaming</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Sports</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Music</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Coding</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Computer Science</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Psychology</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Graphics Design</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">UX Writing</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Web Development</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">Graphics Design</button>
-                        <button class="category" onclick="toggleCategoryClass(this)">UX Writing</button>
-                        <!-- <button class="scroll-btn right-scroll">&gt;</button>  -->
-                    </section>
+                    <!-- <section class="category-section"> -->
+                    <!-- <button class="scroll-btn left-scroll">&lt;</button>  -->
+                    <button class="category_active" onclick="toggleCategoryClass(this)">All</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Mixes</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Gaming</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Sports</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Music</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Coding</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Computer Science</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Psychology</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Graphics Design</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">UX Writing</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Web Development</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">Graphics Design</button>
+                    <button class="category" onclick="toggleCategoryClass(this)">UX Writing</button>
+                    <!-- <button class="scroll-btn right-scroll">&gt;</button>  -->
+                    <!-- </section> -->
                 </div>
             </div>
             <!-- Categories End -->
 
             <div class="videos">
-
-
                 <section class="video-section">
                     <article class="video-container">
                         <a href="#" class="thumbnail" data-duration="12:15">
@@ -534,11 +527,10 @@
                         </div>
                     </article>
                 </section>
-
-                <script src="script.js"></script>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

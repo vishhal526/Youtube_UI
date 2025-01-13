@@ -31,6 +31,25 @@ function changeImage() {
   }
 }
 
+// Toggle the sidebar visibility
+function toggleSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  var main_body = document.getElementById("main_body");
+  var main = document.getElementById("main");
+
+  // If the sidebar is hidden, show it
+  if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+      main_body.style.marginLeft = "0px"
+      //main.style.marginLeft = "0";
+  } else {
+      sidebar.style.width = "250px"; // Set sidebar width when shown
+      main_body.style.marginLeft = "250px"
+      //main.style.marginLeft = "250px"; // Push the main content to the right
+  }
+}
+
+// data-duration updation
 document.querySelectorAll('.thumbnail').forEach(thumbnail => {
   let originalDuration = thumbnail.getAttribute('data-duration');
   let [hours, minutes, seconds] = originalDuration.split(':').map(num => parseInt(num));
