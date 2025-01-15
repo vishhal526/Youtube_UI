@@ -31,8 +31,8 @@ const videoData = [
   },
 
   {
-    thumbnail: "Images/Video_Thumbnail/Niga_Higa.jpg",
-    channelIcon: "Images/Channel_Photo/Nice_Guys.jpg",
+    thumbnail: "Images/Video_Thumbnail/Nice_Guy.jpg",
+    channelIcon: "Images/Channel_Photo/Niga_Higa.jpg",
     title: "Nice Guys",
     channelName: "NigaHiga",
     views: "91M views",
@@ -51,8 +51,8 @@ const videoData = [
   },
 
   {
-    thumbnail: "Images/Video_Thumbnail/India_From_1967.jpg",
-    channelIcon: "Images/Channel_Photo/India_in_Pixels_by_Ashirs.jfif",
+    thumbnail: "Images/Video_Thumbnail/Indian_From_1976.jpg",
+    channelIcon: "Images/Channel_Photo/India_in_Pixels_by_Ashris.jfif",
     title: "Indians from 1967 talk about the future",
     channelName: "India in Pixels by Ashirs",
     views: "1.4M views",
@@ -89,33 +89,35 @@ const videoData = [
     date: "10 years",
     duration: "4:31"
   },
-  
+
   {
-    thumbnail: "Images/Video_Thumbnail/",
-    channelIcon: "Images/Channel_Photo/",
-    title: "",
-    channelName: "",
-    views: "M views",
-    date: " years",
-    duration: ""
+    thumbnail: "Images/Video_Thumbnail/Growing_up.jpg",
+    channelIcon: "Images/Channel_Photo/KirtiChow.jpg",
+    title: "Growing Up Alone...",
+    channelName: "KirtiChow",
+    views: "504k views",
+    date: "2 months",
+    duration: "10:53"
   },
+
   {
-    thumbnail: "Images/Video_Thumbnail/",
-    channelIcon: "Images/Channel_Photo/",
-    title: "",
-    channelName: "",
-    views: "M views",
-    date: " years",
-    duration: ""
+    thumbnail: "Images/Video_Thumbnail/Bleach_trailer.jpg",
+    channelIcon: "Images/Channel_Photo/Aniplex.jpg",
+    title: "TVアニメ『BLEACH 千年血戦篇』ティザーPV／２０２２年１０月放送開始",
+    channelName: "Aniplex",
+    views: "12M views",
+    date: "3 years",
+    duration: "1:50"
   },
+
   {
-    thumbnail: "Images/Video_Thumbnail/",
-    channelIcon: "Images/Channel_Photo/",
-    title: "",
-    channelName: "",
-    views: "M views",
-    date: " years",
-    duration: ""
+    thumbnail: "Images/Video_Thumbnail/Akuma_no_ko.jpg",
+    channelIcon: "Images/Channel_Photo/Ai_Higuchi.jpg",
+    title: "Ai Higuchi “Akuma no Ko” Anime Special Ver.",
+    channelName: "Ai Higuchi",
+    views: "153M views",
+    date: "2 years",
+    duration: "3:49"
   },
 ]
 
@@ -169,6 +171,62 @@ function toggleSidebar() {
   }
 }
 
+//Shuffled array
+function shuffleArray(array) {
+  
+  const shuffled = [...array];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+  
+      const randomIndex = Math.floor(Math.random() * (i + 1));
+
+      [shuffled[i], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[i]];
+  }
+
+  return shuffled;
+}
+const shuffledVideoData = shuffleArray(videoData);
+
+function renderVideos(videos) {
+  const videoSection = document.getElementById("videoSection");
+  videoSection.innerHTML = ""; // Clear previous content
+
+  videos.forEach(video => {
+      const article = document.createElement("article");
+      article.classList.add("video-container");
+
+      article.innerHTML = `
+          <a href="#" class="thumbnail" data-duration="${video.duration}">
+              <img class="thumbnail-image" src="${video.thumbnail}" />
+          </a>
+          <div class="video-bottom">
+              <a href="#">
+                  <img src="${video.channelIcon}" class="channel-icon">
+              </a>
+              <div class="video-details">
+                  <a href="#" class="video-title">${video.title}</a>
+                  <a href="#" class="video-channel-name">${video.channelName}</a>
+                  <div class="video-metadata">
+                      <span>${video.views}</span>
+                      •
+                      <span>${video.date}</span>
+                  </div>
+              </div>
+          </div>
+      `;
+
+      videoSection.appendChild(article);
+  });
+}
+
+// Shuffle and render
+const shuffledData = shuffleArray(videoData);
+renderVideos(shuffledData);
+
+window.onload = function () {
+  const shuffledData = shuffleArray(videoData); // Shuffle the data
+  renderVideos(shuffledData); // Render shuffled videos
+};
 
 // Thumbnail counter updater
 document.querySelectorAll('.thumbnail').forEach(thumbnail => {
