@@ -7,7 +7,7 @@ const videoData = [
     channelName: "EminemMusic",
     views: "94M views",
     date: "6 years ago",
-    duration: "04:42"
+    duration: "4:42"
   },
 
   {
@@ -47,7 +47,7 @@ const videoData = [
     channelName: "UNFILTERED by Samdish",
     views: "3M views",
     date: "1 years",
-    duration: "2.06"
+    duration: "2:06"
   },
 
   {
@@ -127,7 +127,6 @@ function toggleCategoryClass(button) {
   const activeButton = document.querySelector('.category_active');
 
   if (activeButton) {
-
     activeButton.classList.remove('category_active');
     activeButton.classList.add('category');
   }
@@ -142,15 +141,28 @@ function toggleCategoryClass(button) {
 }
 
 
-function changeImage() {
-  const img = document.getElementById('toggleImage');
+function changeImage(optionName, element) {
+  // Get all icons in the side menu
+  const allIcons = document.querySelectorAll('.side-menu .icon img');
 
-  // Toggle between two images
-  if (img.src.includes('placeholder')) {
-    img.src = 'https://via.placeholder.com/200/FF0000/FFFFFF?text=Clicked+Image';
-  } else {
-    img.src = 'https://via.placeholder.com/200';
-  }
+  // Loop through all icons and reset them to light versions
+  allIcons.forEach((icon) => {
+      const currentSrc = icon.src; // Full path of the current src
+      const name = currentSrc.split('/').pop().split('.')[0]; // Extract name without extension
+
+      // Check if the current src is already a light version
+      if (!name.includes('_light')) {
+          icon.src = `Icon/${name}_light.svg`;
+      } else {
+          // If already light, reset without adding "_light" again
+          icon.src = `Icon/${name}.svg`;
+      }
+      icon.classList.remove('active_img');
+  });
+
+  // Set the clicked option to the dark version
+  element.src = `Icon/${optionName}.svg`;
+  element.classList.add('active_img');
 }
 
 // Toggle the sidebar visibility
@@ -173,29 +185,30 @@ function toggleSidebar() {
 
 //Shuffled array
 function shuffleArray(array) {
-  
+
   const shuffled = [...array];
 
   for (let i = shuffled.length - 1; i > 0; i--) {
-  
-      const randomIndex = Math.floor(Math.random() * (i + 1));
 
-      [shuffled[i], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[i]];
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+
+    [shuffled[i], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[i]];
   }
 
   return shuffled;
 }
 const shuffledVideoData = shuffleArray(videoData);
 
-function renderVideos(videos) {
-  const videoSection = document.getElementById("videoSection");
-  videoSection.innerHTML = ""; // Clear previous content
+// render thumbnail in the section tag
+function renderVideos(sectionID, videos) {
+  const section = document.getElementById(sectionID);
+  section.innerHTML = ""; // Clear previous content
 
   videos.forEach(video => {
-      const article = document.createElement("article");
-      article.classList.add("video-container");
+    const article = document.createElement("article");
+    article.classList.add("video-container");
 
-      article.innerHTML = `
+    article.innerHTML = `
           <a href="#" class="thumbnail" data-duration="${video.duration}">
               <img class="thumbnail-image" src="${video.thumbnail}" />
           </a>
@@ -215,52 +228,59 @@ function renderVideos(videos) {
           </div>
       `;
 
-      videoSection.appendChild(article);
+    section.appendChild(article);
   });
 }
 
-// Shuffle and render
-const shuffledData = shuffleArray(videoData);
-renderVideos(shuffledData);
+// refresh the page
+function refresh() {
+  const shuffledData = shuffleArray(videoData);
+  const shuffledrecommandation = shuffleArray(videoData);
+  renderVideos("recommendationSection", shuffledrecommandation);
+  renderVideos("videoSection", shuffledData);
+  addDurationHandlers();
+}
 
-window.onload = function () {
-  const shuffledData = shuffleArray(videoData); // Shuffle the data
-  renderVideos(shuffledData); // Render shuffled videos
-};
+// update thumbnail on page load
+window.onload = refresh();
 
 // Thumbnail counter updater
-document.querySelectorAll('.thumbnail').forEach(thumbnail => {
-  let originalDuration = thumbnail.getAttribute('data-duration');
-  let [hours, minutes, seconds] = originalDuration.split(':').map(num => parseInt(num));
+function addDurationHandlers() {
+  document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+    let originalDuration = thumbnail.getAttribute('data-duration');
+    let [hours, minutes, seconds] = originalDuration.split(':').map(num => parseInt(num));
 
-  if (isNaN(seconds)) {
-    [minutes, seconds] = [hours, minutes];
-    hours = 0;
-  }
-
-  let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
-  let countdownTimer;
-
-  function updateCountdown() {
-    const mins = Math.floor(totalSeconds / 60);
-    const secs = totalSeconds % 60;
-    const formattedTime = `${mins}:${secs < 10 ? '0' + secs : secs}`;
-    thumbnail.setAttribute('data-duration', formattedTime);
-    totalSeconds--;
-
-    if (totalSeconds < 0) {
-      clearInterval(countdownTimer);
-      thumbnail.setAttribute('data-duration', '0:00');
+    if (isNaN(seconds)) {
+      [minutes, seconds] = [hours, minutes];
+      hours = 0;
     }
-  }
 
-  thumbnail.addEventListener('mouseenter', () => {
-    countdownTimer = setInterval(updateCountdown, 1000);
-  });
+    let totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+    let countdownTimer;
 
-  thumbnail.addEventListener('mouseleave', () => {
-    clearInterval(countdownTimer);
-    totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
-    thumbnail.setAttribute('data-duration', originalDuration);
+    function updateCountdown() {
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      const formattedTime = `${mins}:${secs < 10 ? '0' + secs : secs}`;
+      thumbnail.setAttribute('data-duration', formattedTime);
+      totalSeconds--;
+
+      if (totalSeconds < 0) {
+        clearInterval(countdownTimer);
+        thumbnail.setAttribute('data-duration', '0:00');
+      }
+    }
+
+    thumbnail.addEventListener('mouseenter', () => {
+      countdownTimer = setInterval(updateCountdown, 1000);
+    });
+
+    thumbnail.addEventListener('mouseleave', () => {
+      clearInterval(countdownTimer);
+      totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+      thumbnail.setAttribute('data-duration', originalDuration);
+    });
   });
-});
+}
+
+
